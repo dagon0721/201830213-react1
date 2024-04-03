@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Notification from "./Notification";
 
 const reservedNotifications = [
@@ -15,57 +15,91 @@ const reservedNotifications = [
         message: "이제 곧 미팅이 시작됩니다.",
     },
 ];
-
 var timer;
+const NotificationList = () => {
+    const [notifications, setNotifications] = useState([]);
 
-class NotificationList extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            notifications: [],
-        };
-    }
-
-    componentDidMount() {
-        const { notifications } = this.state;
+    useEffect(() => {
+        let timer;
         timer = setInterval(() => {
             if (notifications.length < reservedNotifications.length) {
                 const index = notifications.length;
-                notifications.push(reservedNotifications[index]);
-                this.setState({
-                    notifications: notifications,
-                });
+                setNotifications(prevNotifications => [...prevNotifications, reservedNotifications[index]]);
             } else {
-                this.setState({
-                    notifications: [],
-                });
+                setNotifications([]);
                 clearInterval(timer);
             }
         }, 1000);
-    }
+        
+        return () => {
+            if (timer) {
+                clearInterval(timer);
+            }
+        };
+    }, [notifications]);
 
-    componentWillUnmount() {
-        if (timer) {
-            clearInterval(timer);
-        }
-    }
+    return (
+        <div>
+            {notifications.map(notification => (
+                <Notification
+                    key={notification.id}
+                    id={notification.id}
+                    message={notification.message}
+                />
+            ))}
+        </div>
+    );
+};
 
-    render() {
-        return (
-            <div>
-                {this.state.notifications.map((notification) => {
-                    return (
-                        <Notification
-                            key={notification.id}
-                            id={notification.id}
-                            message={notification.message}
-                        />
-                    );
-                })}
-            </div>
-        );
-    }
-}
+
+// class NotificationList extends React.Component {
+//     constructor(props) {
+//         super(props);
+
+//         this.state = {
+//             notifications: [],
+//         };
+//     }
+
+//     componentDidMount() {
+//         const { notifications } = this.state;
+//         timer = setInterval(() => {
+//             if (notifications.length < reservedNotifications.length) {
+//                 const index = notifications.length;
+//                 notifications.push(reservedNotifications[index]);
+//                 this.setState({
+//                     notifications: notifications,
+//                 });
+//             } else {
+//                 this.setState({
+//                     notifications: [],
+//                 });
+//                 clearInterval(timer);
+//             }
+//         }, 1000);
+//     }
+
+//     componentWillUnmount() {
+//         if (timer) {
+//             clearInterval(timer);
+//         }
+//     }
+
+//     render() {
+//         return (
+//             <div>
+//                 {this.state.notifications.map((notification) => {
+//                     return (
+//                         <Notification
+//                             key={notification.id}
+//                             id={notification.id}
+//                             message={notification.message}
+//                         />
+//                     );
+//                 })}
+//             </div>
+//         );
+//     }
+// }
 
 export default NotificationList;

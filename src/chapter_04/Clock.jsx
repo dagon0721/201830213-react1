@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Clock(props) {
+function Clock(props) {
     return (
         <div>
             <h1>안녕, 리액트!</h1>
@@ -8,3 +8,5 @@ export default function Clock(props) {
         </div>
     );
 }
+
+export default Clock;
