@@ -4,11 +4,12 @@ import './Welcome.jsx';
 import NotificationList from './chapter_06/NotificationList.jsx';
 import Counter from './Counter.jsx';
 import FocusButton from './FocusButton.jsx';
+import Accommodate from './chapter_07/Accommodate.jsx';
 function App() {
   return (
     <div className="App">
       {
-        <FocusButton/>
+        <Accommodate/>
         // <NotificationList />
       /* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />

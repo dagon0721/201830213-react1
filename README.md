@@ -1,5 +1,13 @@
 # 박상원 201830213
 
+## 5월 1일 강의 내용
+7. 훅
+7-8. 나만의 훅 만들기
+1. 필요하다면 직접 만들어 사용 가능, 커스텀 훅이라고 함
+ex) UserStatus 컴포넌트는 isOnline이라는 state에 따라서 사용자의 상태가 온라인인지 아닌지를 텍스트로 보여주는 컴포넌트
+1-1. 기존의 리엑트에서는 render props 또는 HOC(higher order components)를 사용했지만, 이제는 커스텀 훅을 사용한다.
+2. 커스텀 훅 추출하기
+2-1. use로 시작하는 훅을 만들고, 내부에서 다른 훅을 호출하면 된다.
 
 ## 4월 17일 강의 내용
 7. 훅
@@ -62,7 +70,7 @@ Ex) const memoizedValue = useMemo(() => {
 3. 이 규칙에 따라 훅은 컴포넌트가 렌더링 될때마다 같은 순서로 호출되어야 함
 4. 두번째 규칙은 리액트 함수형 컴포넌트에서만 훅을 호출해야 한다.
 5. 일반 자바스크립트 함수에서 훅을 호출하면 안됨
-
+6. 훅은 함수형 컴포넌트 혹은 직접 만든 커스텀 훅에서만 호출할 수 있다.
 
 ## 4월 3일 강의 내용
 5-1. 컴포넌트 구조란
@@ -276,3 +284,102 @@ console.log(multiply(10, 20));
 
 https://extbrain.tistory.com/155(참고용)
 https://github.com/soaple/first-met-react-practice(참고용)
+
+클래스형 컴포넌트와 함수형 컴포넌트의 차이
+javascript
+Copy code
+// 클래스형 컴포넌트
+import React, { Component } from 'react';
+
+class ClassComponent extends Component {
+  render() {
+    return <h1>Hello, I'm a Class Component!</h1>;
+  }
+}
+
+// 함수형 컴포넌트
+import React from 'react';
+
+const FunctionComponent = () => {
+  return <h1>Hello, I'm a Function Component!</h1>;
+}
+
+export { ClassComponent, FunctionComponent };
+Props를 사용한 컴포넌트 간의 데이터 전달
+javascript
+Copy code
+// 부모 컴포넌트
+import React from 'react';
+import ChildComponent from './ChildComponent';
+
+const ParentComponent = () => {
+  return <ChildComponent name="John" age={30} />;
+}
+
+// 자식 컴포넌트
+import React from 'react';
+
+const ChildComponent = (props) => {
+  return (
+    <div>
+      <h2>Name: {props.name}</h2>
+      <h2>Age: {props.age}</h2>
+    </div>
+  );
+}
+
+export default ChildComponent;
+State를 사용한 컴포넌트 내부 상태 관리
+javascript
+Copy code
+import React, { Component } from 'react';
+
+class Counter extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0
+    };
+  }
+
+  incrementCount = () => {
+    this.setState(prevState => ({
+      count: prevState.count + 1
+    }));
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Count: {this.state.count}</h1>
+        <button onClick={this.incrementCount}>Increment</button>
+      </div>
+    );
+  }
+}
+
+export default Counter;
+useEffect를 사용한 사이드 이펙트 처리
+javascript
+Copy code
+import React, { useState, useEffect } from 'react';
+
+const Timer = () => {
+  const [seconds, setSeconds] = useState(0);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setSeconds(prevSeconds => prevSeconds + 1);
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, []); // 빈 배열을 전달하여 컴포넌트가 마운트될 때만 실행
+
+  return (
+    <div>
+      <h1>Timer: {seconds} seconds</h1>
+    </div>
+  );
+}
+
+export default Timer;

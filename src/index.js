@@ -9,10 +9,11 @@ import CommentList from './chapter_05/CommentList';
 import NotificationList from './chapter_06/NotificationList';
 import Counter from './Counter';
 import FocusButton from './FocusButton';
+import Accommodate from './chapter_07/Accommodate';
 
 ReactDOM.render(
   <React.StrictMode>
-    <FocusButton />
+    <Accommodate />
   </React.StrictMode>,
   document.getElementById('root')
 );
