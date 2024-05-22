@@ -1,5 +1,40 @@
 # 박상원 201830213
 
+## 5월 8일 강의 내용
+
+8-2. Arguments 전달하기
+1. 함수를 정의할때는 파라미터 혹은 매겨변수 함수를 사용할 때는 Argument 혹은 인수라고 부른다
+2. 이벤트 핸들러에 매개변수를 전달해야 하는 경우도 많다.
+3. event라는 매개변수는 리액트의 이벤트 객체를 의미 한다.
+
+<button onClick={(event) => this.deleteItem(id, event)}>삭제하기</button>
+<button onClick={this.deleteItem.bind(this, id)}>삭제하기</button>
+
+위으 코드는 모두 동일한 역할을 하지만 하나는 화살표 함수를, 다른 하나는 바인드를 사용함
+
+9-1. 조건부 렌더링이란?
+function Greeting(props){
+    const isLoggedIn = props.isLoggedIn;
+    if (isLoggedIn){
+        return <UserGreeting />;
+    }
+    return <GuestGreeting />
+}
+1. props로 전달받은 isLoggeIn이 true이면 <UserGreeting />을, flase면 <GuestGreeting />을 리턴한다. 이같은 렌더링을 조건부 렌더링이라고 한다.
+9-2. 엘리먼트 변수
+1. 렌더링해야 될 컴포넌트를 사용하는 방법이 엘리먼트 변수이다. state에 따라 button 변수에 컴포넌트의 객체를 저장하여 return 문에서 사용하고 있다.
+9-3. 인라인 조건
+1. 필요한 곳에 조건문을 직접 넣어 사용하는 방법
+2. 인라인 if
+2-1. if문을 직접 사용하지 않고 동일한 효과를 내기 위해 && 논리 연산자를 사용함
+2-2. &&는 and연자로 모든 조건이 참일떄만 참이 된다.
+3. 인라인 if-else
+3-1. 삼항 연산자를 사용한다.
+3-2. 문자열이나 엘리먼트를 넣어서 사용할 수도 있다.
+9-4. 컴포넌트 렌더링 막기
+1. 컴포넌트를 렌더링하고 싶지 않을 때에는 null을 리턴한다.
+
+
 ## 5월 1일 강의 내용
 7. 훅
 7-8. 나만의 훅 만들기
