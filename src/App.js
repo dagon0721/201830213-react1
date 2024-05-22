@@ -6,11 +6,12 @@ import Counter from './Counter.jsx';
 import FocusButton from './FocusButton.jsx';
 import Accommodate from './chapter_07/Accommodate.jsx';
 import AttendanceBook from './chapter_10/AttendanceBook.jsx';
+import SignUp from './chapter_11/SignUp.jsx';
 function App() {
   return (
     <div className="App">
       {
-        <AttendanceBook/>
+        <SignUp/>
         // <NotificationList />
       /* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
