@@ -12,10 +12,11 @@ import FocusButton from './FocusButton';
 import Accommodate from './chapter_07/Accommodate';
 import AttendanceBook from './chapter_10/AttendanceBook';
 import SignUp from './chapter_11/SignUp';
+import NameForm from './chapter_11/NameForm';
 
 ReactDOM.render(
   <React.StrictMode>
-    <SignUp />
+    <NameForm />
   </React.StrictMode>,
   document.getElementById('root')
 );

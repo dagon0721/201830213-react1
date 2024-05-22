@@ -7,11 +7,12 @@ import FocusButton from './FocusButton.jsx';
 import Accommodate from './chapter_07/Accommodate.jsx';
 import AttendanceBook from './chapter_10/AttendanceBook.jsx';
 import SignUp from './chapter_11/SignUp.jsx';
+import NameForm from './chapter_11/NameForm.jsx';
 function App() {
   return (
     <div className="App">
       {
-        <SignUp/>
+        <NameForm/>
         // <NotificationList />
       /* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
