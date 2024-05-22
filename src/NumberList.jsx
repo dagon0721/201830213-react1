@@ -24,19 +24,27 @@ export default function NumberList(){
             todo: "할일5",
         }
     ];
-
+    
     const listItems = numbers.map((number, index) => 
       <li key = {index}>{number}</li>
     );
-
+    
+    //id 값을 key props로 사용한 경우
     const itemLists = todoLists.map((todoList) =>
          <li key={todoList.id}>{todoList.todo}</li>
     );
 
+    //index 값을 key props로 사용한 경우
+    const foos = todoLists.map((foo, index) =>
+        <li key={index}>{foo.todo}</li>
+    );
+
+    
     return (
         <>
             <ul>{listItems}</ul>
             <ul>{itemLists}</ul>
+            <ul>{foos}</ul>
         </>
     );
 }
