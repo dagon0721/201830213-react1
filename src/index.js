@@ -10,10 +10,11 @@ import NotificationList from './chapter_06/NotificationList';
 import Counter from './Counter';
 import FocusButton from './FocusButton';
 import Accommodate from './chapter_07/Accommodate';
+import AttendanceBook from './chapter_10/AttendanceBook';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Accommodate />
+    <AttendanceBook />
   </React.StrictMode>,
   document.getElementById('root')
 );
