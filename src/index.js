@@ -13,10 +13,16 @@ import Accommodate from './chapter_07/Accommodate';
 import AttendanceBook from './chapter_10/AttendanceBook';
 import SignUp from './chapter_11/SignUp';
 import NameForm from './chapter_11/NameForm';
+import TemperatureInput from './chapter_12/TemperatureInput';
+import Calculator from './Calculator';
+import Card from './chapter_13/Card';
+import ProfileCard from './chapter_13/ProfileCard';
+import WelcomeDialog from './chapter_13/WelcomeDialog';
+import SplitPane from './chapter_13/SpliePane';
 
 ReactDOM.render(
   <React.StrictMode>
-    <NameForm />
+    <SplitPane />
   </React.StrictMode>,
   document.getElementById('root')
 );

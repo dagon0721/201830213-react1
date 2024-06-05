@@ -8,11 +8,20 @@ import Accommodate from './chapter_07/Accommodate.jsx';
 import AttendanceBook from './chapter_10/AttendanceBook.jsx';
 import SignUp from './chapter_11/SignUp.jsx';
 import NameForm from './chapter_11/NameForm.jsx';
+import TemperatureInput from './chapter_12/TemperatureInput.jsx';
+import Calculator from './Calculator.jsx';
+import Card from './chapter_13/Card.jsx';
+import ProfileCard from './chapter_13/ProfileCard.jsx';
+import WelcomeDialog from './chapter_13/WelcomeDialog.jsx';
+import SplitPane from './chapter_13/SpliePane.jsx';
 function App() {
   return (
     <div className="App">
       {
-        <NameForm/>
+        <SplitPane
+        left={<Contacts/>}
+        right={<Chat/>}
+        />
         // <NotificationList />
       /* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
