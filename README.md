@@ -41,6 +41,10 @@
 2. 컴포넌트의 개념을 사용하고 있어 리액트 개발에 많이 사용
 3. styled-components 설치하기
 4. npm install --save styled-components (자동 추가라 괜찮음) import해서 사용하면 됨
+
+## 6월 11일 강의 내용
+허리디스크 이슈로 결석
+
 ## 6월 5일 강의 내용
 12-1. Shared State
 1. state의 공유를 의미
