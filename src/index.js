@@ -19,10 +19,13 @@ import Card from './chapter_13/Card';
 import ProfileCard from './chapter_13/ProfileCard';
 import WelcomeDialog from './chapter_13/WelcomeDialog';
 import SplitPane from './chapter_13/SpliePane';
+import DarkOrLight from './chapter_14/DarkOrLight';
+import MainPage from './chapter_15/MainPage.jsx';
+import Blocks from './chapter_15/Blocks.jsx';
 
 ReactDOM.render(
   <React.StrictMode>
-    <SplitPane />
+    <Blocks />
   </React.StrictMode>,
   document.getElementById('root')
 );

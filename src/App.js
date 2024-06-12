@@ -14,14 +14,14 @@ import Card from './chapter_13/Card.jsx';
 import ProfileCard from './chapter_13/ProfileCard.jsx';
 import WelcomeDialog from './chapter_13/WelcomeDialog.jsx';
 import SplitPane from './chapter_13/SpliePane.jsx';
+import DarkOrLight from './chapter_14/DarkOrLight.jsx';
+import MainPage from './chapter_15/MainPage.jsx';
+import Blocks from './chapter_15/Blocks.jsx';
 function App() {
   return (
     <div className="App">
       {
-        <SplitPane
-        left={<Contacts/>}
-        right={<Chat/>}
-        />
+        <Blocks/>
         // <NotificationList />
       /* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />

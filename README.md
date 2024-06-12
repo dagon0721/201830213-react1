@@ -1,6 +1,46 @@
 # 박상원 201830213
 
+## 6월 12일 강의 내용
+15-1. CSS란?
+1. 스타일링을 위한 언어
+2. Cascading이란 계단식이라는 뜻으로 한 엘리먼트에 여러 스타일이 적용될 경우 스타일간의 충돌을 막기 위해 계단식으로 스타일을 적용시키는 규칙을 갖고 있다.
+3. 하나의 스타일이 여러 개의 엘리먼트에 적용될 수도 있고, 하나의 엘리먼트에도 여러 개의 스타일이 적용될 수 있다.
+4. 엘리먼트에 스타일이 적용되는 규칙을 선택자라고 한다. CSS는 이 선택자와 스타일로 이루어 진다.
 
+15-2. CSS 문법과 선택자
+1. 선택자를 먼저 쓰고 다음에 적용할 스타일을 중괄호 안에 세미콜론으로 구분하여 하나씩 작성한다.
+2. 선택자는 HTML 엘리먼트를 직접 넣어도 되고, 엘리먼트의 조합 혹은 class의 형태로 작성 가능
+3. 스타일은 property와 key value로 이루어 짐, 이들은 콜론으로 구분, 각 스타일은 세미콜론으로 구분
+4. ex) h1 {color:green;font-size:16px;}
+5. id 선택자 사용 X 가능은 하나 자바스크립트 id선언과 겹침
+6. html태그로 특정할 수 없는 스타일은 모두 class로 정의
+7. 상태 선택자 :hover 마우스 커서가 올라 왔을때, :active link 클릭, :focus input태그에 주로 사용, :checked radio button이나 checkbox 같은 유형의 input 태그가 체크되어 있는 경우, :first-child,:last-child 상위 엘리먼트 기준으로 순서 
+8. 대표적인 block과 inline 태그는 Block: div, table, h1~6, p, ul, ol, li   inline: span, a, br, em, strong, input, label, img
+9. visibility 속성은 엘리먼트의 가시성을 정의
+10. 여기서 중요한것은 display:none과 visibility:hidden의 차이 엘리먼트의 영역이 보이지 않고 보임
+11. position 속성은 엘리먼트를 어떻게 위치시킬 것인지 정의
+12. static은 원래 순서대로 위치 시킴
+13. fixed는 window에 상대적위치라 정의 하지만 지금은 sticky로 바뀜
+14. relative는 상대적, absolute 절대적 위치를 지정
+15. serif: 모서리에 작은 테두리를 갖고 있는 형태의 글꼴, sans-serif: 모서리에 테두리 없이 깔끔한 선을 가진 글꼴, 가독성이 더 좋음
+16. monospace: 모든 글자가 같은 가로 길이를 가지는 글꼴, 코딩을 할 때 주로 사용
+17. cursive: 사람이 쓴 손글씨 모양의 글꼴
+18. fantasy: 장식이 들어간 형태의 글꼴
+19. CSS의 색상 값 16진수 컬러 값, 투명도를 가진 16진수 컬러 값 : 16진수 + 숫자, RGB, RGBA(뒤에 0~1 추가 투명도)
+
+15-3. 레이아웃과 관련된 속성
+1. 화면에 엘리먼트를 어떻게 배치할 것인지를 정의
+2. display가 중요, 모든 엘리먼트는 기본적으로 display속성을 갖고 있지만 이 기본값을 변경해 줄수 있음
+3. none 존재는 하지만 화면에 보이지 않음, 자바스크립트를 넣을 때 많이 사용
+4. block 세로로 정렬, with의 height를 갖을 수 있다. 크기와 상관없이 한 줄 점유
+5. inline 가로로 정렬, width의 height를 갖을 수 없다. 컨텐츠의 크기만큼 공간 점유
+6. inline-block 기본적으로 inline 특성을 갖지만, width와 height등 block의 특성을 사용할 수 있음
+
+15-4. styled-components
+1. CSS 문법을 그대로 사용하면서 결과물을 스타일링된 컴포넌트 형태로 만들어 주는 오픈소스 라이브러리
+2. 컴포넌트의 개념을 사용하고 있어 리액트 개발에 많이 사용
+3. styled-components 설치하기
+4. npm install --save styled-components (자동 추가라 괜찮음) import해서 사용하면 됨
 ## 6월 5일 강의 내용
 12-1. Shared State
 1. state의 공유를 의미
